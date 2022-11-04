@@ -21,6 +21,7 @@ jobs:
          export PSPDEV=/usr/local/pspdev
          export PATH=$PATH:/usr/local/pspdev/bin
          sudo bash ./prepare-debian-ubuntu.sh
+         sudo apt install libgpgme-dev
          sudo bash ./toolchain-sudo.sh
          cd ../ 
          git clone https://github.com/pspdev/psplinkusb.git
