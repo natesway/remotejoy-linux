@@ -13,23 +13,23 @@ jobs:
       - name: "build psptoolchain and remotejoy"
         id: latest_tag
         run: |
-        git clone https://github.com/pspdev/psptoolchain.git
-        cd psptoolchain
-        sudo mkdir -p /usr/local/pspdev
-        export PSPDEV=/usr/local/pspdev
-        sudo chown -R $USER: $PSPDEV
-        export PSPDEV=/usr/local/pspdev
-        export PATH=$PATH:/usr/local/pspdev/bin
-        sudo bash ./prepare-debian-ubuntu.sh
-        sudo bash ./toolchain-sudo.sh
-        cd ../ 
-        git clone https://github.com/pspdev/psplinkusb.git
-        cd psplinkusb
-        make all
-        cd ../
-        env:
-        PSPDEV: /usr/local/pspdev
-        PATH: $PATH:/usr/local/pspdev/bin
+         git clone https://github.com/pspdev/psptoolchain.git
+         cd psptoolchain
+         sudo mkdir -p /usr/local/pspdev
+         export PSPDEV=/usr/local/pspdev
+         sudo chown -R $USER: $PSPDEV
+         export PSPDEV=/usr/local/pspdev
+         export PATH=$PATH:/usr/local/pspdev/bin
+         sudo bash ./prepare-debian-ubuntu.sh
+         sudo bash ./toolchain-sudo.sh
+         cd ../ 
+         git clone https://github.com/pspdev/psplinkusb.git
+         cd psplinkusb
+         make all
+         cd ../
+        env: |
+         PSPDEV: /usr/local/pspdev
+         PATH: $PATH:/usr/local/pspdev/bin
       - name: capture build artifacts
         uses: actions/upload-artifact@v2
         with:
