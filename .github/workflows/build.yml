@@ -16,11 +16,8 @@ jobs:
          git clone https://github.com/pspdev/psptoolchain.git
          cd psptoolchain
          sudo mkdir -p /usr/local/pspdev
-         export PSPDEV=/usr/local/pspdev
          echo "PSPDEV=/usr/local/pspdev" >> $PSPDEV
          sudo chown -R $USER: $PSPDEV
-         export PSPDEV=/usr/local/pspdev
-         export PATH=$PATH:/usr/local/pspdev/bin
          echo "$PATH=$PATH:/usr/local/pspdev/bin" >> $PATH
          sudo bash ./prepare-debian-ubuntu.sh
          sudo apt install libgpgme-dev
