@@ -19,7 +19,6 @@ jobs:
          cd psptoolchain
          sudo mkdir -p /usr/local/pspdev
          sudo chown -R $USER: $PSPDEV
-         echo "$PATH=$PATH:/usr/local/pspdev/bin" >> $PATH
          sudo bash ./prepare-debian-ubuntu.sh
          sudo apt install libgpgme-dev
          sudo bash ./toolchain-sudo.sh
